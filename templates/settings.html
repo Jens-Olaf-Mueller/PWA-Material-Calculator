@@ -1,0 +1,60 @@
+<h2 id="h2Settings">Einstellungen</h2>
+
+<div class="img-button" id="imgCloseSettings">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#777777" id="svgCloseSettings">
+        <polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/>
+    </svg>
+</div>
+<div class="control">
+    <label for="inpLanguage" id="lblLanguage">Sprache</label>
+    <input type="range" id="inpLanguage" min="0" max="2" value="0">
+</div>
+<div class="control">
+    <label for="inpStyle" id="lblStyle">Design</label>
+    <input type="range" id="inpStyle" min="0" max="2" value="0">
+</div>
+<div class="control">
+    <label for="inpShowLanguageButton" id="lblShowLanguageButton">Sprachbutton auf Startseite</label>
+    <input type="range" id="inpShowLanguageButton" class="switch" min="0" max="1" value="1" checked>
+</div>
+<div class="control">
+    <label for="inpShowHelp" id="lblShowHelp">Hilfebutton anzeigen</label>
+    <input type="range" id="inpShowHelp" class="switch" min="0" max="1" value="1" checked>
+</div>
+<div class="control" style="margin-bottom: 0.25rem;">
+    <label for="inpUseDefaults" id="lblUseDefaults">Defaultwerte verwenden</label>
+    <input type="range" id="inpUseDefaults" class="switch" min="0" max="1" value="1" checked>
+</div>
+<div class="control">
+    <input id="inpDefaultTileLength" type="text" placeholder=" " maxlength="4">      
+    <label for="inpDefaultTileLength" id="lblDefaultTileLength">Default-Plattenlänge</label>
+    <span class="unit">mm</span>
+</div>
+
+<div class="control">
+    <input id="inpDefaultTileWidth" type="text" placeholder=" " maxlength="4">
+    <label for="inpDefaultTileWidth" id="lblDefaultTileWidth">Default-Plattenbreite</label>
+    <span class="unit">mm</span>
+</div>
+
+<div class="control">
+    <input id="inpDefaultJointsWidth" type="text" placeholder=" " maxlength="2">            
+    <label for="inpDefaultJointsWidth" id="lblDefaultJointsWidth">Default-Fugenbreite</label>
+    <span class="unit">mm</span>
+</div> 
+
+<div class="control">
+    <input id="inpDefaultJointsDepth" type="text" placeholder=" " maxlength="2">
+    <label for="inpDefaultJointsDepth" id="lblDefaultJointsDepth">Default-Fugentiefe</label>
+    <span class="unit">mm</span>
+</div>
+<div class="control">
+    <label for="inpBagSize" id="lblBagSize">Sack Kleber</label>
+    <input type="range" id="inpBagSize" min="15" max="25" value="25" step="10">
+    <span class="unit">25 kg</span>
+</div>
+<div class="control">
+    <label for="inpPouchSize" id="lblPouchSize">Fuge</label>
+    <input type="range" id="inpPouchSize" min="5" max="25" value="5" step="5">
+    <span class="unit">5 kg</span>
+</div>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4f4f4">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#020204">
+    <meta name="description"
+          content="Materialrechner zum Berechnen von Fliesen, Kleber, Fugenmaterial und Nivelliermasse"/>
+
+    <title>Material calculator</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/controls.css">
+    <link rel="stylesheet" href="./style/calculator.css">
+    <link rel="apple-touch-icon" href="./img/icon.png">
+    <link rel="icon" href="./img/icon.png" type="image/x-icon">
+
+    <script defer src="./js/material.js" type="module"></script>       
+</head>
+<body>
+    <div w3-include-html="templates/main.html" id="divPod" class="pod-container"></div>
+
+    <div w3-include-html="templates/settings.html" 
+         id="divSettings" 
+         class="pod-container settings" 
+         hidden>
+    </div>
+
+    <div w3-include-html="templates/table.html"
+         id="divResult"
+         class="pod-container result"
+         hidden>       
+    </div>
+
+    <div w3-include-html="templates/help.html"
+         id="divHelp"
+         class="pod-container help"
+         hidden>
+    </div>
+</body>
+<script>
+    function log(expression) { console.log(expression); }
+</script>
+</html>

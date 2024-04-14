@@ -1,0 +1,182 @@
+:root {
+    --bgColor: #c1c1c4;
+    --podShadow1: #000000a8;
+    --podShadow2: #ffffff33;
+    --gridGap: 1rem;
+    --buttonWidth: 3rem;
+    --buttonHeight: 2.4rem;
+    --buttonBorderRadius: 0.5rem;
+    --buttonDoubleBorderRadius: 0.5rem;
+    --buttonBgColor: #ecf0f3; 
+    --buttonTextColor: #777;
+    --buttonSpecialColor: #5166d6;
+    --buttonHoverColor: #333;
+    --buttonMemBgColor: #555555;
+    --shadowRaised1: white;
+    --shadowRaised2:#00000066;
+    --shadowSunken1: grey;
+    --shadowSunken2: white;
+    --displayBorderRadius: 0.5rem;
+    --displayBgColor: #282c2f;
+    --displayColor: darkgrey;
+    --displayTextShadow: -1px -1px 2px white, 2px 2px 2px #00000066;
+}
+
+.flx-end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;    
+}
+
+.calculator-pod {
+    --paddingTop: calc((100vh - 7* var(--buttonHeight) - 7* var(--gridGap) - 5.5rem) / 2);
+    padding: var(--paddingTop) 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: grid;
+    grid-gap: var(--gridGap);
+    grid-template-columns: repeat(5, var(--buttonWidth));
+    justify-content: center;
+    background: linear-gradient(135deg, var(--bg2), var(--bg1));
+    opacity: 1;
+    animation: fadeIn 250ms ease-in;
+    z-index: 99999;
+}
+
+.calculator-pod[hidden] {
+    opacity: 0;
+}
+
+@keyframes fadeIn {  
+    from {  
+        opacity:0;  
+    }  
+    to {  
+        opacity:1;  
+    }  
+ }
+
+/* ############################################ */
+/*                   DISPLAY                    */
+/* ############################################ */
+.display {
+    display: grid;
+    grid-template-rows: 1rem 1fr;
+    grid-column: span 5;
+    height: 5.5rem;
+    padding: 0.6rem;
+    box-shadow: inset 5px 5px 5px var(--shadowDark), inset -5px -5px 5px var(--shadowLight);
+    border-radius: var(--displayBorderRadius);
+    font-size: 2rem;
+    color: var(--displayColor);
+    background-color: var(--displayBgColor);
+    text-shadow: var(--displayTextShadow); 
+}
+
+.status-bar {
+    display: grid;
+    grid-template-columns: 1rem 1fr;
+    align-items: center;
+    font-size: x-small;
+}
+
+#divPrevOperand {
+    font-size: 0.75rem;
+}
+
+button.calc-btn {
+    font-size: 1.15rem;
+    width: calc(100vw / 6.95);
+    height: var(--buttonHeight);
+    border: none;
+    border-radius: var(--buttonBorderRadius);
+    background: none;
+    color: var(--buttonTextColor);
+    outline: none;
+    box-shadow: -6px -6px 9px var(--shadowLight), 6px 6px 9px var(--shadowDark);
+    cursor: pointer;
+    touch-action: manipulation; /* disables the zoom on double-tap */
+}
+
+button.calc-btn:hover {
+    filter: brightness(0.85);
+    transform: scale(1.05);
+}
+
+
+button.calc-btn:active {
+    box-shadow: inset 5px 5px 5px var(--shadowSunken1), inset -5px -5px 5px var(--shadowSunken2);
+}
+
+button.memory {
+    background-color: var(--buttonMemBgColor);
+    font-size: smaller;
+    font-weight: bold;
+}
+
+button.operator, button.operator:hover {
+    color: tomato;
+    font-weight: bold;
+}
+
+button.zero {
+    grid-row: 8/9;   
+    grid-column: span 2; /* 1/3; */
+    width: auto;
+    border-radius: var(--buttonDoubleBorderRadius);
+}
+
+button.equals {
+    grid-row: 8/10;
+    grid-column: 5/6;
+    height: auto;
+    font-weight: bolder;
+    color: var(--buttonSpecialColor);
+    border-radius: var(--buttonDoubleBorderRadius);
+}
+
+button.equals.buddy {
+    grid-row: unset;
+}
+
+button.all-clear {
+    font-weight: bolder;
+    color: var(--buttonSpecialColor);
+}
+
+#divCalcSettings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--bg2), var(--bg1));
+    color: var(--buttonTextColor);
+    padding: 4.25rem 1rem 1rem;
+}
+
+#h2CalcSettings {
+    font-size: 1.25rem;
+}
+
+#divCalcSettings > .control input[type="range"]:not(.switch) {
+    right: 20%;
+}
+
+#divCalcSettings > .control > .unit {
+    right: 0.5rem;
+}
+
+@media screen and (min-width: 320px) and (max-width: 860px) and (orientation: landscape) {
+    body {
+        align-content: center;
+    }
+    .calculator-pod {
+        transform: rotate(-90deg);
+        transform-origin: center;
+        width: 100vh;
+    }
+}
